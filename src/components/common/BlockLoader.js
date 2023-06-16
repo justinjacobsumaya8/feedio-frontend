@@ -1,8 +1,8 @@
 export default function BlockLoader(props) {
     return (
         <>
-            <div className={props.className}>
-                <div className={`block-ui ${props.classNameBlockUi}`}>
+            <div className={props.className ?? ""}>
+                <div className={`block-ui ${props.classNameBlockUi ?? ""}`}>
                     {props.children}
                     {props.blocking && (
                         <div className="block-ui-container">

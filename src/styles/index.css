@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+    width: 0;
+    height: 3px;
+    background-color: #fafafc;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #f25d23;
+    border-radius: 5px;
+}
+
 .bg-sidebar {
     background-color: #f4f6fa;
 }
@@ -26,9 +37,13 @@
     color: #979797;
     font-size: 10px;
     padding: 8px 12px;
-    border: 1px solid #CECECE;
+    border: 1px solid #cecece;
 }
 
 .page-item.disabled .page-link {
-    border: 1px solid #CECECE;
+    border: 1px solid #cecece;
+}
+
+.min-height-2-5 {
+    min-height: 2.5em !important;
 }

@@ -109,7 +109,7 @@ export default function Collection() {
                                 onChange={onChangeTitle}
                                 autoFocus
                             />
-                            <button type="submit" className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                            <button type="submit" className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-xs px-3 lg:px-5 py-2 text-center">
                                 Submit
                             </button>
                             <button type="button" className="rounded-md bg-primary px-3 py-2 text-xs font-semibold bg-white text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-100 sm:mt-0 sm:w-auto" onClick={(event) => setIsRenameActive(false)}>
@@ -157,27 +157,29 @@ export default function Collection() {
                         )}
                     </Dropdown>
                 </div>
-                <div className="flex gap-6 mt-8 border-b">
-                    {userFolder.userFolderSubscriptions.map((userFolderSubscription) => (
-                        <div key={userFolderSubscription.id}>
-                            <button
-                                type="button"
-                                className={`p-2 rounded-sm text-gray-400 hover:border-b-2 flex items-center gap-3 ${userFolderSubscription.id === activeUserFolderSubscription.id ? 'active-feed-tab' : ''}`}
-                                onClick={(event) => onClickChangeTab(event, userFolderSubscription)}
-                            >
-                                {userFolderSubscription.sourceId !== "" && (
-                                    <span>{userFolderSubscription.sourceName}</span>
-                                )}
-                                {userFolderSubscription.categoryId !== "" && (
-                                    <span>{userFolderSubscription.categoryName}</span>
-                                )}
-                                {userFolderSubscription.authorId !== "" && (
-                                    <span>{userFolderSubscription.authorName}</span>
-                                )}
-                                <span className="text-xs">{userFolderSubscription.userFeeds.length}</span>
-                            </button>
-                        </div>
-                    ))}
+                <div className="max-w-full overflow-x-auto">
+                    <div className="flex gap-6 mt-8 border-b">
+                        {userFolder.userFolderSubscriptions.map((userFolderSubscription) => (
+                            <div key={userFolderSubscription.id}>
+                                <button
+                                    type="button"
+                                    className={`p-2 rounded-sm text-gray-400 hover:border-b-2 flex items-center gap-3 whitespace-nowrap ${userFolderSubscription.id === activeUserFolderSubscription.id ? 'active-feed-tab' : ''}`}
+                                    onClick={(event) => onClickChangeTab(event, userFolderSubscription)}
+                                >
+                                    {userFolderSubscription.sourceId !== "" && (
+                                        <span>{userFolderSubscription.sourceName}</span>
+                                    )}
+                                    {userFolderSubscription.categoryId !== "" && (
+                                        <span>{userFolderSubscription.categoryName}</span>
+                                    )}
+                                    {userFolderSubscription.authorId !== "" && (
+                                        <span>{userFolderSubscription.authorName}</span>
+                                    )}
+                                    <span className="text-xs">{userFolderSubscription.userFeeds.length}</span>
+                                </button>
+                            </div>
+                        ))}
+                    </div>
                 </div>
                 {userFolder.userFolderSubscriptions.map((userFolderSubscription) => (
                     <div key={userFolderSubscription.id}>
@@ -199,12 +201,12 @@ export default function Collection() {
                                             alt="Article Thumbnail"
                                         />
                                         <div className="mt-3 lg:mt-0">
-                                            <div className="space-y-1 md:pl-4 ">
+                                            <div className="lg:space-y-1 space-y-2 md:pl-4 ">
                                                 <p className="text-xs text-gray-400">
                                                     <span>{userFeed.article.categoryName}</span> /{" "}
                                                     {userFeed.article.publishedAtFormatted}
                                                 </p>
-                                                <div className="text-xs mb-8 text-gray-500 flex gap-2">
+                                                <div className="text-xs mb-8 text-gray-400 flex gap-2">
                                                     {userFeed.article.articleAuthors.map((articleAuthor, index) => (
                                                         <div key={articleAuthor.id} className="flex gap-1">
                                                             {index === 0 && <span>By</span>}

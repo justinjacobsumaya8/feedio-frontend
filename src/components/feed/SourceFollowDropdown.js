@@ -109,7 +109,7 @@ export default function SourceFollowDropdown() {
     };
 
     return (
-        <BlockLoader blocking={isLoadingFollow || isLoadingUnfollow} classNameBlockUi="sticky top-0 flex justify-center items-center p-4 lg:p-0 border-b gap-5 bg-gray-200">
+        <BlockLoader blocking={isLoadingFollow || isLoadingUnfollow} classNameBlockUi="sticky top-0 flex justify-center items-center p-4 lg:p-0 border-b gap-5 bg-gray-200 min-height-2-5">
             {!userFolderSubscription && (
                 <>
                     <span className="text-sm">Get <strong className="font-semibold">{activeArticle.sourceName}</strong> delivered to your Feedio</span>

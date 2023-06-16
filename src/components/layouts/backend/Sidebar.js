@@ -69,14 +69,19 @@ export default function Sidebar() {
 
     return (
         <>
-            <span
-                className="absolute bg-blue-700 rounded-lg h-8 w-9 flex items-center p-1 lg:hidden top-5 left-4 cursor-pointer "
-                onClick={() => setOpenSidebar(true)}
-            >
-                <MenuIcon className="stroke-white w-9 h-7" />
-            </span>
+            <div className="bg-white relative h-16 lg:hidden">
+                <div className="flex items-center space-x-6 px-6 py-3 h-full">
+                    <div
+                        className=" bg-blue-700 rounded-lg h-8 w-9 flex items-center p-1  cursor-pointer "
+                        onClick={() => setOpenSidebar(true)}
+                    >
+                        <MenuIcon className="stroke-white w-9 h-7" />
+                    </div>
+                </div>
+            </div>
 
-            <aside className={`fixed overflow-auto overflow-y-hidden h-auto min-h-screen ${openSidebar ? 'w-[100%] transition-x-0' : 'w-0 transition-x-0'} lg:w-[296px] bg-sidebar border-r z-20 lg:z-0 duration-300`} aria-label="Sidebar">
+            <aside className={`fixed overflow-auto overflow-y-hidden h-auto min-h-screen ${openSidebar ? "w-[100%] transition-x-0" : "w-0 transition-x-0"
+                } top-0 lg:w-[296px] bg-sidebar border-r z-20 lg:z-0 duration-300`} aria-label="Sidebar">
                 <div className={`h-full transition-opacity ${openSidebar ? 'opacity-100' : 'opacity-0'}`}>
                     <div className="flex items-center justify-between border-b p-4">
                         <div className="flex items-center">
