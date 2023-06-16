@@ -136,7 +136,7 @@ export default function ShowArticleModal({
                                                         src={
                                                             activeArticle.thumbnailUrl
                                                                 ? activeArticle.thumbnailUrl
-                                                                : "/images/default-img.jpg"
+                                                                : "/images/default-img.jpeg"
                                                         }
                                                         alt="Article Thumbnail"
                                                     />
