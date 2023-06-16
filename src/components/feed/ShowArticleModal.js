@@ -115,7 +115,7 @@ export default function ShowArticleModal({
                                                     </button>{" "}
                                                     / {activeArticle.publishedAtFormatted}
                                                 </div>
-                                                <div className="text-sm mb-8 text-gray-500 flex gap-2">
+                                                <div className="text-sm mb-8 text-gray-500 flex gap-2 whitespace-nowrap">
                                                     {activeArticle.articleAuthors.map((articleAuthor, index) => (
                                                         <div key={articleAuthor.id} className="flex gap-1">
                                                             {index === 0 && <span>By</span>}

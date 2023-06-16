@@ -28,8 +28,14 @@ const subscribeSlice = createSlice({
                 isLoadingUnfollow: Boolean(action.payload)
             }
         },
+        resetTitle: (state, action) => {
+            return {
+                ...state,
+                newFolderTitle: ""
+            }
+        },
     },
 })
 
-export const { setNewFolderTitle, setIsLoadingFollow, setIsLoadingUnfollow } = subscribeSlice.actions
+export const { setNewFolderTitle, setIsLoadingFollow, setIsLoadingUnfollow, resetTitle } = subscribeSlice.actions
 export default subscribeSlice.reducer

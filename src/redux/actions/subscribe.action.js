@@ -1,6 +1,6 @@
 import axiosService from "src/services/AxiosService";
 import { setAlert } from "../slices/alert.slice";
-import { setIsLoadingFollow, setIsLoadingUnfollow } from "../slices/subscribe.slice";
+import { resetTitle, setIsLoadingFollow, setIsLoadingUnfollow } from "../slices/subscribe.slice";
 
 const SOURCE_SUBSCRIPTION_TYPE = "source";
 const CATEGORY_SUBSCRIPTION_TYPE = "category";
@@ -47,6 +47,7 @@ export const createSubscription = (action, subscriptionType, userFolderId = null
                 type: "success"
             }));
             dispatch(setIsLoadingFollow(false));
+            dispatch(resetTitle());
             return Promise.resolve(response);
         } catch (error) {
             dispatch(setAlert({
