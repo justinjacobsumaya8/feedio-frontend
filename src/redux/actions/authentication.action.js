@@ -49,15 +49,15 @@ export const login = (email, password) => {
 };
 
 export const logout = () => {
-    return async (dispatch) => {
+    return async (dispatch, getState) => {
         dispatch(setIsLoggingOut(true));
 
         const cookies = new Cookies();
         try {
             await axiosService.post("/api/auth/logout");
 
-            cookies.remove(APP.ACCESS_TOKEN_KEY);
-            cookies.remove(APP.REFRESH_TOKEN_KEY);
+            cookies.remove(APP.ACCESS_TOKEN_KEY, { path: '/' });
+            cookies.remove(APP.REFRESH_TOKEN_KEY, { path: '/' });
 
             dispatch(saveLogout());
             dispatch(setIsLoggingOut(false));

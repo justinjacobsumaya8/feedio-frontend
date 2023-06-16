@@ -193,7 +193,7 @@ export default function Sidebar() {
                                         >
                                             <button
                                                 type="button"
-                                                className="py-[0.6rem] px-4 text-sm flex items-center"
+                                                className="py-[0.6rem] px-4 text-sm flex items-center w-full"
                                                 onClick={onClickLogout}
                                                 disabled={isLoggingOut}
                                             >

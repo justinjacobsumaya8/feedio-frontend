@@ -35,14 +35,12 @@ const combinedReducer = combineReducers({
 
 const rootReducer = (state, action) => {
     // Check if action is for logout, then reset all reducers
-    if (action.type === "authentication/setIsLoggingOut") {
+    if (action.type === "authentication/saveLogout") {
         state = undefined;
     }
     return combinedReducer(state, action);
 };
 
-const store = configureStore({
+export default configureStore({
     reducer: rootReducer,
 });
-
-export default store;

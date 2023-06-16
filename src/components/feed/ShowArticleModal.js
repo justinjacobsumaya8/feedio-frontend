@@ -33,7 +33,6 @@ export default function ShowArticleModal({
         dispatch(setShowArticleModal(false));
     };
 
-
     return (
         <>
             {showArticleModal && (
